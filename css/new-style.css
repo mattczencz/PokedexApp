@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=New+Tegomin&family=Patua+One&display=swap");
+
+/* CSS Reset */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+/* CSS Start */
+
+:root {
+  --red-grad: linear-gradient(45deg, #960000 0%, #d60000 50%, #960000 100%);
+  --glass: linear-gradient(0deg, #d0eff7 0%, #f5fefe 50%, #d0eff7 100%);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  overflow: hidden;
+  border: 2px solid black;
+  background-image: var(--glass);
+  text-transform: capitalize;
+  font-family: "Patua One";
+}
+
+nav {
+  background-image: var(--red-grad);
+  height: 10%;
+  width: 100vw;
+  min-width: 320px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0px 0px 5px black;
+  border-bottom: 2px solid black;
+}
+
+nav h1 {
+  font-size: 40px;
+  font-family: "Patua One";
+  color: white;
+  -webkit-text-stroke: 1px black;
+  margin: 10px;
+}
+
+/* Display Area Styling */
+#display-area {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#pokemon-img{
+    width: 100px;
+}
+
+#type{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+#type div{
+    margin: 5px;
+}
+
+/* PokeTag Area Styling */
+#bottom {
+  padding: 15px 80px 15px 15px;
+  border-top: 2px solid black;
+  background-image: var(--red-grad);
+  position: relative;
+}
+
+.pokemon-names {
+  display: flex;
+  height: 250px;
+  background-color: white;
+  border: 2px solid black;
+  justify-content: center;
+  position: relative;
+  box-shadow: inset 0px 0px 10px black;
+  overflow: hidden;
+  padding-top: 10px;
+  width: 93%;
+}
+
+.triangle {
+  width: 0px;
+  height: 0px;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-right: 50px solid black;
+  position: absolute;
+  right: 90px;
+  bottom: 90px;
+}
+
+#poketag-area {
+  display: flex;
+  flex-direction: column;
+}
+
+#poketag-area button {
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid black;
+  font-size: 25px;
+  text-align: center;
+  padding: 10px 0px;
+  margin: 11px 0px;
+  width: 100%;
+  font-family: "Patua One";
+  color: black;
+  text-transform: capitalize;
+}
+
+.pokeball-selector {
+  background-image: url(Images/pokeball-2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 250px;
+  min-width: 250px;
+  position: absolute;
+  right: -125px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 25px 0px rgb(0 0 0 / 50%);
+  top: 12px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100px);
+  }
+}
