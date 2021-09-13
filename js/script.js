@@ -86,7 +86,7 @@ function switchPokemon(){
     //Move the list up when clicked
     if(currentPokemon.id > prevPokemon && currentPokemon.id === prevPokemon + 1){
         // Set translation of the list to -75px more than previously
-        translation -= 75;
+        translation -= 76;
         $pokeTagArea.css({'transform': `translateY(${translation}px)`})
         $pokeTagArea.css({'transition': '1s'})
 
@@ -100,7 +100,7 @@ function switchPokemon(){
         prevPokemon = currentPokemon.id
     } else if(currentPokemon.id < prevPokemon && currentPokemon.id === prevPokemon - 1){
         // Set translation to +75px more than previously
-        translation += 75;
+        translation += 76;
         $pokeTagArea.css({'transform': `translateY(${translation}px)`})
         $pokeTagArea.css({'transition': '1s'})
 
