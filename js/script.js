@@ -6,6 +6,10 @@ const $pokeTagArea = $('#poketag-area')
 const $pokeBall = $('.pokeball-selector')
 const $typeArea = $('#type')
 const $weaknessArea = $('#weakness')
+const $blueCircle = $('#circle')
+const $redCircle = $('.small-circle-1')
+const $yellowCircle = $('.small-circle-2')
+const $greenCircle = $('.small-circle-3')
 
 // Variables that need to change or update
 let $pokeImage = $('#pokemon-img')
@@ -13,6 +17,7 @@ let $pokeName = $('#poke-name')
 let prevPokemon = 2
 let translation = 0
 let rotation = 0
+let isReady = true
 
 // Get all pokemon names (up to 500), put it in $pokemonNames array, then add each one to their own button and create it.
 function getAllPokemon(){ 
@@ -79,6 +84,8 @@ function renderPokemon(){
         let typeItem = $(`<div>${type.type.name}</div>`)
         $typeArea.append(typeItem)
     }
+
+    
 }
 
 // Function to switch pokemon -- Do stuff with the front end in this function (change photo, name, etc.)
@@ -95,6 +102,7 @@ function switchPokemon(){
         $pokeBall.css({'transform': `rotate(${rotation}deg)`})
         $pokeBall.css({'transition': '1s'})
 
+        animateLights()
         renderPokemon()
 
         prevPokemon = currentPokemon.id
@@ -109,9 +117,23 @@ function switchPokemon(){
         $pokeBall.css({'transform': `rotate(${rotation}deg)`})
         $pokeBall.css({'transition': '1s'})
 
+        animateLights()
         renderPokemon()
 
         prevPokemon = currentPokemon.id
     }
+}
+
+function animateLights() {
+    $blueCircle.css({'animation-name': 'blink'})
+    $redCircle.css({'animation-name': 'blink-red'})
+    $yellowCircle.css({'animation-name': 'blink-yellow'})
+    $greenCircle.css({'animation-name': 'blink-green'})
+    setTimeout(() => {
+        $blueCircle.css({'animation-name': ''})
+        $redCircle.css({'animation-name': ''})
+        $yellowCircle.css({'animation-name': ''})
+        $greenCircle.css({'animation-name': ''})
+    }, 1000)
 }
 
