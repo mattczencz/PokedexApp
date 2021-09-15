@@ -238,11 +238,12 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
   }
 
   main {
     width: 400px;
-    max-height: 600px;
+    max-height: 650px;
   }
 
   nav {
